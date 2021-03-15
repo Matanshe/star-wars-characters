@@ -2,11 +2,11 @@ import './App.css';
 import {useEffect, useState} from "react";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import Home from "./Components/Home";
-import Films from "./Components/Films";
+import Films from "./Components/Films/Films";
 import {Spinner} from "react-bootstrap";
-import getCharacters from "./getCharacters";
 import {CharactersProvider} from "./CharactersContext";
 import Header from "./Components/Header";
+import getCharacters from "./Components/Characters/charactersUtils";
 
 
 function App() {

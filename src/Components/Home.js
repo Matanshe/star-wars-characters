@@ -1,11 +1,10 @@
-import Header from "./Header";
-import Search from "./Search";
+import SearchCharacters from "./Characters/SearchCharacters";
 
 function Home(){
 
     return(
         <div>
-            <Search/>
+            <SearchCharacters/>
         </div>
     )
 }

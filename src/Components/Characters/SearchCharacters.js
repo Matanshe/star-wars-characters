@@ -1,18 +1,17 @@
 import React, {useContext, useState} from "react";
-import CharactersContext from "../CharactersContext";
-import CharactersList from "../CharactersList";
-import {Button, Row} from "react-bootstrap";
+import CharactersContext from "../../CharactersContext";
+import CharactersList from "./CharactersList";
+import {Button} from "react-bootstrap";
 import {useHistory} from "react-router-dom";
 
 
-function Search(){
+function SearchCharacters() {
 
     const [input, setInput] = useState('');
     const characters = useContext(CharactersContext).characters;
     const [charactersList, setCharactersList] = useState(characters);
 
     const history = useHistory();
-
 
     const updateInput = async (input) => {
         const filtered = characters.filter(character => {
@@ -26,8 +25,8 @@ function Search(){
         return <div>
             <div className="search-row">
                 <SearchBar
-                input={input}
-                onChange={updateInput}
+                    input={input}
+                    onChange={updateInput}
                 />
                 <Button onClick={() => history.push("/movies")}> check movies</Button>
             </div>
@@ -36,17 +35,17 @@ function Search(){
 }
 
 const SearchBar = (props) => {
-        const BarStyling = {width:"20rem",background:"#F2F1F9", border:"none", padding:"0.5rem"};
-        return (
-            <input
-                style={BarStyling}
-                value={props.input}
-                placeholder={"search character"}
-                onChange={(e) => props.onChange(e.target.value)}
-            />
+    const BarStyling = {width: "20rem", background: "#F2F1F9", border: "none", padding: "0.5rem"};
+    return (
+        <input
+            style={BarStyling}
+            value={props.input}
+            placeholder={"search character"}
+            onChange={(e) => props.onChange(e.target.value)}
+        />
 
-        );
+    );
 }
 
 
-export default Search;
+export default SearchCharacters;
