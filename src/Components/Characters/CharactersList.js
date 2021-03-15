@@ -31,7 +31,7 @@ function CharactersList(props) {
     const changeCharacters = useContext(CharactersContext).changeCharacters;
 
     // i know thats not the best idea, but i spent too much time on figuring out why this is not rerendering
-    const [ignored, forceUpdate] = useReducer(x => x + 1, 0);
+    const [, forceUpdate] = useReducer(x => x + 1, 0);
     const setChecked = setCheckedCharacters(characters, changeCharacters, props, forceUpdate);
 
     return (
