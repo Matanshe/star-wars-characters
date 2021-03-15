@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background: black;
+  min-height: 100vh
 }
 
 .App-logo {
@@ -14,8 +16,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,4 +36,16 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.container{
+  display: flex;
+  flex-flow: wrap;
+  max-width: 1190px!important;
+}
+
+.search-row{
+  display: flex;
+  justify-content: space-evenly;
+  padding-bottom: 25px;
 }
